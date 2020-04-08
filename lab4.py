@@ -68,7 +68,7 @@ while True:
                  round(Y_average5, 3), round(Y_average6, 3), round(Y_average7, 3), round(Y_average8, 3)]
 
     x0 = [1, 1, 1, 1, 1, 1, 1, 1]
-    x1 = [15, 15, 45, 45, 15, 15, 45, 45]  # представлення значення для нащиз зміних
+    x1 = [15, 15, 45, 45, 15, 15, 45, 45]  # представлення значення для наших зміних
     x2 = [-25, 10, -25, 10, -25, 10, -25, 10]
     x3 = [-45, 50, 50, -45, 50, -45, -45, 50]
     x1x2 = [a * b for a, b in zip(x1, x2)]
@@ -146,7 +146,9 @@ while True:
     pt2.add_column(column_names1[11], Y_average)
     pt2.add_column(column_names1[12], disp_list)
     print(pt2, '\n')
-
+    
+    
+################## перехід до рівняння взаємодії
     list_ai = [round(i, 5) for i in solve(list_for_solve_a, Y_average)]
     print("y = {} + {}*x1 + {}*x2 + {}*x3 + {}*x1x2 + {}*x1x3 + {}*x2x3 + {}*x1x2x3".format(list_ai[0], list_ai[1],
                                                                                             list_ai[2], list_ai[3],
@@ -161,7 +163,7 @@ while True:
 
 
 
-    def cohren(g_prac, g_teor): #функція Кохрена
+    def cohren(g_prac, g_teor): # функція Кохрена
         return g_prac < g_teor
 
     print("\nGp = ", Gp, " Gt = ", Gt)
@@ -257,5 +259,6 @@ while True:
             break
 
     else:
+        ##### якщо потрапляємо в цей елз, то збільшуем кількість повторень комбінацій
         print("Дисперсія неоднорідна.Помилочка.Спробуйте ще раз.")
         m += 1
